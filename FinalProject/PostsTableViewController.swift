@@ -14,15 +14,23 @@ class PostsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        data = Model.instance.getAllPosts();
+     //   data = Model.instance.getAllPosts();
       //  let i = data.count
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
+     
+        Model.instance.getAllPosts { (_data:[Post]?) in
+            if(_data != nil){
+                self.data = _data!;
+                self.tableView.reloadData();
+            }
+        };
+            
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+      
     }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

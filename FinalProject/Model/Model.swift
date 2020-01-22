@@ -17,8 +17,8 @@ class Model
     private init()
     {
    //     modelSql.connect()
-  /*     for i in 0 ... 10
-        {
+       for i in 0...0{
+        
             let ps = Post(id: String(i),productName: "productName" + String(i),catagory: "catagory" + String(i),city: "city" + String(i),price: "price" + String(i),rentDates: "rentDates" + String(i),moreDetails: "moreDetails" + String(i),avatar: "",phone:"phone" + String(i))
  
 //            ps.productName =  String(i)
@@ -29,7 +29,7 @@ class Model
 //            ps.moreDetails = String(i)
             add(post: ps)
         }
-        */
+        
         
         
     }
@@ -40,10 +40,11 @@ class Model
         modelFirebase.add(post:post)
     }
     
-    func getAllPosts()->[Post]
+    func getAllPosts(callback:@escaping ([Post]?)->Void)
     {
       //  return modelSql.getAllPosts()
-        return modelFirebase.getAllPosts()
+       // return modelFirebase.getAllPosts()
+        modelFirebase.getAllPosts(callback: callback)
     }
     
 }

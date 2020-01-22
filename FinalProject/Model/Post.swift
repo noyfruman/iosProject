@@ -32,5 +32,31 @@ class Post
         self.phone=phone;
         
     }
-
+    init (json:[String:Any]){
+        self.id = json["id"] as! String;
+        self.productName = json["productName"] as! String;
+        self.catagory = json["catagory"] as! String;
+        self.city = json["city"] as! String;
+        self.price = json["price"] as! String;
+        self.rentDates = json["rentDates"] as! String;
+        self.moreDetails = json["moreDetails"] as! String;
+        self.avatar = json["avatar"] as! String
+        self.phone = json["phone"] as! String;
+    }
+    
+    func toJson()->[String:String]
+    {
+        var json = [String:String]();
+        json["id"]=id
+        json["productName"] = productName;
+        json["catagory"] = catagory;
+        json["city"] = city;
+        json["price"] = price;
+        json["rentDates"] = rentDates;
+        json["moreDetails"] = moreDetails;
+        json["avatar"] = avatar;
+        json["phone"] = phone;
+        return json;
+    }
+    
 }
