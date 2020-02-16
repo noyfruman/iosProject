@@ -13,6 +13,7 @@ target 'FinalProject' do
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
   pod 'Kingfisher', '~> 5.0'
+  Pod 'SwiperCellKit'
   
   target 'FinalProjectTests' do
     inherit! :search_paths

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class ViewController: UIViewController { //sign in
+class ViewController: UIViewController,UITextViewDelegate,UITextFieldDelegate{ //sign in
     
     @IBOutlet weak var myTitle: UILabel!
     @IBOutlet weak var emailText: UITextField!
@@ -18,16 +18,20 @@ class ViewController: UIViewController { //sign in
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+//        navigationController?.hidesBarsWhenKeyboardAppears = true
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
     
+
     @objc func dismissKeyboard(){
         view.endEditing(true)
     }
     
     @IBAction func signIn(_ sender: UIButton) {
         PasswordText.resignFirstResponder();
+        emailText.resignFirstResponder();
         let user = User(email: emailText.text!, pass: PasswordText.text!)
         Model.instance.loginUser(user: user){ (email) in
             if (email == "Wrong"){
@@ -53,14 +57,14 @@ class ViewController: UIViewController { //sign in
  
     
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-    }
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//
+//    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "homeSegue"){
             

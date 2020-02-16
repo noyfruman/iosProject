@@ -13,6 +13,8 @@
 		840570DD23D9B12E0063664A /* FirebaseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840570DC23D9B12E0063664A /* FirebaseStorage.swift */; };
 		84103A7723F6C2DE0050DA34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84103A7623F6C2DE0050DA34 /* User.swift */; };
 		84103A7A23F6E49A0050DA34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A21F523C7418B0027FA61 /* ViewController.swift */; };
+		8419239323F9BFCA0087A00D /* MyPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419239223F9BFCA0087A00D /* MyPostsTableViewController.swift */; };
+		8419239523F9C21E0087A00D /* MyPostsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419239423F9C21E0087A00D /* MyPostsViewCell.swift */; };
 		841A21F223C7418B0027FA61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A21F123C7418B0027FA61 /* AppDelegate.swift */; };
 		841A21F423C7418B0027FA61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A21F323C7418B0027FA61 /* SceneDelegate.swift */; };
 		841A21F923C7418B0027FA61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841A21F723C7418B0027FA61 /* Main.storyboard */; };
@@ -67,6 +69,8 @@
 		3F2DCE95E11ABD34E6E96DA4 /* Pods-FinalProjectUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FinalProjectUITests.release.xcconfig"; path = "Target Support Files/Pods-FinalProjectUITests/Pods-FinalProjectUITests.release.xcconfig"; sourceTree = "<group>"; };
 		840570DC23D9B12E0063664A /* FirebaseStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseStorage.swift; sourceTree = "<group>"; };
 		84103A7623F6C2DE0050DA34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8419239223F9BFCA0087A00D /* MyPostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsTableViewController.swift; sourceTree = "<group>"; };
+		8419239423F9C21E0087A00D /* MyPostsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsViewCell.swift; sourceTree = "<group>"; };
 		841A21EE23C7418B0027FA61 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A21F123C7418B0027FA61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		841A21F323C7418B0027FA61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 				8439749D23CE06140038B703 /* PostsTableViewController.swift */,
 				8439749F23CE09BC0038B703 /* PostsViewCell.swift */,
 				84BE6B8223F983D200D3C95A /* PostInfoViewController.swift */,
+				8419239223F9BFCA0087A00D /* MyPostsTableViewController.swift */,
+				8419239423F9C21E0087A00D /* MyPostsViewCell.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -514,6 +520,7 @@
 				841A21F223C7418B0027FA61 /* AppDelegate.swift in Sources */,
 				841A21F423C7418B0027FA61 /* SceneDelegate.swift in Sources */,
 				84BE6B8323F983D200D3C95A /* PostInfoViewController.swift in Sources */,
+				8419239323F9BFCA0087A00D /* MyPostsTableViewController.swift in Sources */,
 				84103A7723F6C2DE0050DA34 /* User.swift in Sources */,
 				846462DD23C7886F00936D6B /* SignUpViewController.swift in Sources */,
 				848FF38723F7033200F660F8 /* ModelEvents.swift in Sources */,
@@ -524,6 +531,7 @@
 				84B06A4723CF416300F96C04 /* ModelSql.swift in Sources */,
 				3DA4234E23D8480600DEC564 /* ModelFirebase.swift in Sources */,
 				848FF38523F701FD00F660F8 /* StringEventNotificationBase.swift in Sources */,
+				8419239523F9C21E0087A00D /* MyPostsViewCell.swift in Sources */,
 				843974A023CE09BC0038B703 /* PostsViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-class NewPostViewController: UIViewController,UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate { //we dont need all the labels. can delete it.
+class NewPostViewController: UIViewController,UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate { //we dont need all the labels. can delete it.
     //var delegate: NewPostViewControllerDelegate?;
     @IBOutlet weak var NewPostTitle: UILabel!
     @IBOutlet weak var CategoryPLabel: UILabel!
@@ -34,16 +33,21 @@ class NewPostViewController: UIViewController,UITextFieldDelegate, UIImagePicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Activities.isHidden = true;
+        NamePText.delegate = self
+        CategoryPText.delegate = self
+        CityText.delegate = self
+        Dates.delegate = self
+        PriceText.delegate = self
+        DetailsText.delegate = self
+        phoneText.delegate = self
         
-        //        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
-        //        tap.cancelsTouchesInView=false;
-        //        view.addGestureRecognizer(tap);
+        
+        Activities.isHidden = true;
         
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
-    
+
     @objc func dismissKeyboard(){
         view.endEditing(true)
     }
@@ -61,12 +65,14 @@ class NewPostViewController: UIViewController,UITextFieldDelegate, UIImagePicker
         
     }
     var selectedImage:UIImage?
+    
     @IBAction func postButton(_ sender:  UIButton) { //in eliav- save
-        self.tabBarController?.selectedIndex = 0
+           self.tabBarController?.selectedIndex = 0
+        var post = Post(productName: self.NamePText.text!, catagory: self.CategoryPText.text!, city: self.CityText.text!, price: self.PriceText.text!, rentDates: self.Dates.text!, moreDetails: self.DetailsText.text!, avatar: "", phone: self.phoneText.text!, email: Post.userEmail)
         Activities.isHidden = false;
         finishPostButton.isEnabled = false;
         finishPicButton.isEnabled = false;
-        var post = Post(productName: self.NamePText.text!, catagory: self.CategoryPText.text!, city: self.CityText.text!, price: self.PriceText.text!, rentDates: self.Dates.text!, moreDetails: self.DetailsText.text!, avatar: "", phone: self.phoneText.text!, email: Post.userEmail)
+        
         
         if let selectedImage = selectedImage {
             Model.instance.saveImage(image: selectedImage){ (url) in
@@ -93,6 +99,8 @@ class NewPostViewController: UIViewController,UITextFieldDelegate, UIImagePicker
     }
     
     
-    
+    func configureTextView(){
+        
+    }
     
 }

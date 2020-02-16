@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 //
 //  PostsTableViewController.swift
 //  FinalProject

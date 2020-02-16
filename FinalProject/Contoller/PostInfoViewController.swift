@@ -1,3 +1,4 @@
+
 //
 //  PostInfoViewController.swift
 //  FinalProject
@@ -7,6 +8,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PostInfoViewController: UIViewController {
 
@@ -36,6 +38,15 @@ class PostInfoViewController: UIViewController {
         moreDetailsLabel.text=post?.moreDetails
         phoneLabel.text = post?.phone
         avateImage.image = UIImage(named:"avatar")
+        
+        if(post?.avatar != "")
+        {
+            avateImage.kf.setImage(with: URL(string:post!.avatar))
+        }
+       
+    
+    }
+    func configureTextView(){
         
     }
     
