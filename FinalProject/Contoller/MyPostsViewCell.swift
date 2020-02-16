@@ -16,19 +16,12 @@ protocol MyPostsCellDelegate {
 class MyPostsViewCell: UITableViewCell {
 
     @IBOutlet weak var productNameLabel: UILabel!
-    
     @IBOutlet weak var avatarImg: UIImageView!
-    
     @IBOutlet weak var catagoryLabel: UILabel!
-    
     @IBOutlet weak var cityLabel: UILabel!
-    
     @IBOutlet weak var priceLabel: UILabel!
-    
     @IBOutlet weak var datesLabel: UILabel!
-    
     @IBOutlet weak var moreDetailsLabel: UILabel!
-    
     @IBOutlet weak var phoneLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

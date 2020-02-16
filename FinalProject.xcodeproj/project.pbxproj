@@ -15,6 +15,7 @@
 		84103A7A23F6E49A0050DA34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A21F523C7418B0027FA61 /* ViewController.swift */; };
 		8419239323F9BFCA0087A00D /* MyPostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419239223F9BFCA0087A00D /* MyPostsTableViewController.swift */; };
 		8419239523F9C21E0087A00D /* MyPostsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419239423F9C21E0087A00D /* MyPostsViewCell.swift */; };
+		8419239723F9CEDA0087A00D /* EditMyPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8419239623F9CEDA0087A00D /* EditMyPostsViewController.swift */; };
 		841A21F223C7418B0027FA61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A21F123C7418B0027FA61 /* AppDelegate.swift */; };
 		841A21F423C7418B0027FA61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A21F323C7418B0027FA61 /* SceneDelegate.swift */; };
 		841A21F923C7418B0027FA61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841A21F723C7418B0027FA61 /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 		84103A7623F6C2DE0050DA34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8419239223F9BFCA0087A00D /* MyPostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsTableViewController.swift; sourceTree = "<group>"; };
 		8419239423F9C21E0087A00D /* MyPostsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPostsViewCell.swift; sourceTree = "<group>"; };
+		8419239623F9CEDA0087A00D /* EditMyPostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyPostsViewController.swift; sourceTree = "<group>"; };
 		841A21EE23C7418B0027FA61 /* FinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A21F123C7418B0027FA61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		841A21F323C7418B0027FA61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				84BE6B8223F983D200D3C95A /* PostInfoViewController.swift */,
 				8419239223F9BFCA0087A00D /* MyPostsTableViewController.swift */,
 				8419239423F9C21E0087A00D /* MyPostsViewCell.swift */,
+				8419239623F9CEDA0087A00D /* EditMyPostsViewController.swift */,
 			);
 			path = Contoller;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				840570DD23D9B12E0063664A /* FirebaseStorage.swift in Sources */,
 				841A21F223C7418B0027FA61 /* AppDelegate.swift in Sources */,
 				841A21F423C7418B0027FA61 /* SceneDelegate.swift in Sources */,
+				8419239723F9CEDA0087A00D /* EditMyPostsViewController.swift in Sources */,
 				84BE6B8323F983D200D3C95A /* PostInfoViewController.swift in Sources */,
 				8419239323F9BFCA0087A00D /* MyPostsTableViewController.swift in Sources */,
 				84103A7723F6C2DE0050DA34 /* User.swift in Sources */,
