@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 //
 //  PostsTableViewController.swift
 //  FinalProject
@@ -16,6 +23,7 @@ class PostsTableViewController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        Post.numberOfPosts = Model.instance.modelSql.getNumOfPosts(name: "POST")
         self.refreshControl = UIRefreshControl();
         self.refreshControl?.addTarget(self, action: #selector(reloadData), for: .valueChanged)
         ModelEvents.PostDataEvent.observe {
@@ -26,6 +34,7 @@ class PostsTableViewController: UITableViewController {
         self.refreshControl?.beginRefreshing()
         reloadData();
     }
+    
     @objc func reloadData(){
         
         Model.instance.getAllPosts { (_data:[Post]?) in
@@ -34,7 +43,7 @@ class PostsTableViewController: UITableViewController {
                 self.tableView.reloadData();
             }
             self.refreshControl?.endRefreshing();
-        };
+        }
     }
     // MARK: - Table view data source
     
@@ -70,9 +79,25 @@ class PostsTableViewController: UITableViewController {
         
         return cell
     }
+    var selectedPost: Post?
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+              selectedPost = data[indexPath.row]
+                  performSegue(withIdentifier: "postInfoSegue", sender: self)
+          }
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if( segue.identifier == "postInfoSegue")
+            {
+                let vc:PostInfoViewController = segue.destination as! PostInfoViewController
+                vc.post = selectedPost
+        }
+        
+    }
 }
-    
-    
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -118,8 +143,5 @@ class PostsTableViewController: UITableViewController {
      }
      */
     
-    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //        let ps = data[indexPath.row]
-    //
-    //    }
+      
 
