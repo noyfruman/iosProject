@@ -7,13 +7,14 @@
 //
 
 import UIKit
-//import SwipeCellKit
+import SwipeCellKit
+
 protocol MyPostsCellDelegate {
     func editPost(index:Int)
     func deletePost(index:Int)
 }
 
-class MyPostsViewCell: UITableViewCell {
+class MyPostsViewCell: SwipeTableViewCell {
 
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var avatarImg: UIImageView!
@@ -34,3 +35,4 @@ class MyPostsViewCell: UITableViewCell {
     }
 
 }
+                                    /////finish////

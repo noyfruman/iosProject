@@ -57,11 +57,11 @@ class ModelFirebase{
     
     
 
-
 func getMyPosts(callback:@escaping ([Post]?)->Void){
         let db = Firestore.firestore()
        var ref: DocumentReference? = nil
         db.collection("post").order(by: "email").getDocuments { (querySnapshot, err) in
+        
             if let err = err {
                 print("Error getting documents: \(err)")
                 callback(nil)
@@ -122,7 +122,7 @@ func getMyPosts(callback:@escaping ([Post]?)->Void){
             else{
                 print("Registration Successful!!")
                 print("Log in successful!")
-                let user = Auth.auth().currentUser
+                var user = Auth.auth().currentUser
                 if let user = user{
                     let email = user.email
                 }
@@ -139,7 +139,7 @@ func getMyPosts(callback:@escaping ([Post]?)->Void){
                 callback("wrong")
             }else{
                 print("Log in successful!")
-                let user = Auth.auth().currentUser
+                var user = Auth.auth().currentUser
                 if let user = user{
                     let email = user.email
                 }
@@ -156,7 +156,7 @@ func getMyPosts(callback:@escaping ([Post]?)->Void){
                 ModelEvents.loginEvent.post(data: "wrong")
             }else{
                 print("Log in successful!")
-                let user = Auth.auth().currentUser
+                var user = Auth.auth().currentUser
                 if let user = user{
                     let email = user.email
                 }

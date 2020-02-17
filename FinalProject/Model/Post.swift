@@ -54,7 +54,8 @@ class Post
         self.moreDetails = json["moreDetails"] as! String;
         self.avatar = json["avatar"] as! String
         self.phone = json["phone"] as! String;
-        self.email = Post.userEmail
+        //self.email = Post.userEmail
+        self.email = json["email"] as! String
         self.postId = Post.postID
         let ts = json["lastUpdate"] as! Timestamp
         lastUpdate = ts.seconds;

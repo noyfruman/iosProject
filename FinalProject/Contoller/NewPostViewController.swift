@@ -41,17 +41,18 @@ class NewPostViewController: UIViewController,UITextFieldDelegate, UIImagePicker
         DetailsText.delegate = self
         phoneText.delegate = self
         
-        
         Activities.isHidden = true;
         
         let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+        
     }
-
+    
     @objc func dismissKeyboard(){
         view.endEditing(true)
     }
-
+    
     
     @IBAction func Pic(_ sender: UIButton) { //to take photos from gallery/camera.
         if UIImagePickerController.isSourceTypeAvailable(
@@ -67,7 +68,7 @@ class NewPostViewController: UIViewController,UITextFieldDelegate, UIImagePicker
     var selectedImage:UIImage?
     
     @IBAction func postButton(_ sender:  UIButton) { //in eliav- save
-           self.tabBarController?.selectedIndex = 0
+        self.tabBarController?.selectedIndex = 0
         var post = Post(productName: self.NamePText.text!, catagory: self.CategoryPText.text!, city: self.CityText.text!, price: self.PriceText.text!, rentDates: self.Dates.text!, moreDetails: self.DetailsText.text!, avatar: "", phone: self.phoneText.text!, email: Post.userEmail)
         Activities.isHidden = false;
         finishPostButton.isEnabled = false;

@@ -34,7 +34,10 @@ class ModelSql
     
      func create(){
         var errormsg: UnsafeMutablePointer<Int8>? = nil
-        var res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS POST(POSTKEY TEXT PRIMARY KEY, PRODUCTNAME TEXT, CATAGORY TEXT, CITY TEXT, PRICE TEXT ,RENTDATES TEXT,MOREDETAILS TEXT, AVATAR TEXT, PHONE TEXT, EMAIL TEXT)", nil, nil, &errormsg);
+        
+       // var res=sqlite3_exec(database, "DROP TABLE POST", nil, nil, &errormsg);
+        
+       var res = sqlite3_exec(database, "CREATE TABLE IF NOT EXISTS POST(POSTKEY TEXT PRIMARY KEY, PRODUCTNAME TEXT, CATAGORY TEXT, CITY TEXT, PRICE TEXT ,RENTDATES TEXT,MOREDETAILS TEXT, AVATAR TEXT, PHONE TEXT, EMAIL TEXT)", nil, nil, &errormsg);
              if(res != 0){
                  print("error creating table");
                  return

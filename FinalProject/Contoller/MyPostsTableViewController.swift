@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwipeCellKit
+
 class MyPostsTableViewController: UITableViewController {
     
     
@@ -49,8 +51,8 @@ class MyPostsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MyPostsViewCell = tableView.dequeueReusableCell(withIdentifier: "MyPostsCell", for: indexPath) as! MyPostsViewCell
-        
-        
+
+        cell.delegate = self as! SwipeTableViewCellDelegate
         let post = data[indexPath.row]
         cell.productNameLabel.text = post.productName
         cell.catagoryLabel.text = post.catagory
@@ -67,8 +69,11 @@ class MyPostsTableViewController: UITableViewController {
             cell.avatarImg.kf.setImage(with: URL(string: post.avatar)) //load the images.
         }
         
+        
         return cell
+        
     }
+    
     var selectedPost: Post?
     func editPost(index:Int)
     {
@@ -87,56 +92,38 @@ class MyPostsTableViewController: UITableViewController {
     {
         if segue.identifier == "postEditSegue"
         {
-            let vc: EditMyPostViewController = segue.destination as! EditMyPostViewController
+            let vc: EditMyPostsViewController = segue.destination as! EditMyPostsViewController
             vc.post = selectedPost
         }
     }
 }
 
+extension MyPostsTableViewController : SwipeTableViewCellDelegate
+{
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else{ return nil}
+        let delete = SwipeAction (style: .destructive, title: "Delete") { action, indexPath in
+            self.deletePost(index: indexPath.row)
+        }
+        let edit = SwipeAction (style: .destructive, title: "Edit") { action, indexPath in
+                   self.editPost(index: indexPath.row)
+    }
+        delete.image = UIImage(named: "deleteIcon")
+        delete.backgroundColor = UIColor.white;
+        edit.image = UIImage(named: "editIcon")
+        edit.backgroundColor = UIColor.white
+        
+        return [delete,edit]
+}
+    func updateAction(at indexPath: IndexPath) //maybe to delete this func !!
+    {
+        print("item deleted from superclass")
+    }
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = .clear
+    }
+}
     
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-     if editingStyle == .delete {
-     // Delete the row from the data source
-     tableView.deleteRows(at: [indexPath], with: .fade)
-     } else if editingStyle == .insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
+
     
 

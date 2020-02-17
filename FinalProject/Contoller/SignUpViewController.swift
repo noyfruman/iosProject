@@ -7,33 +7,48 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class SignUpViewController: UIViewController,UITextViewDelegate,UITextFieldDelegate {
     
     //    @IBAction func BackButton(_ sender: UIButton) {
     //    }
     @IBOutlet weak var SignupLabel: UILabel!
-    @IBOutlet weak var FullNameLabel: UILabel!
-    @IBOutlet weak var FullNameText: UITextField!
     @IBOutlet weak var PasswordLabel: UILabel!
     @IBOutlet weak var PasswordText: UITextField!
-    @IBOutlet weak var VerPassword: UITextField!
-    @IBOutlet weak var VerPasswordLabel: UILabel!
     @IBOutlet weak var EmailLabel: UILabel!
     @IBOutlet weak var EmailText: UITextField!
     
-    @IBAction func RegisterButton(_ sender: UIButton) {
+    @IBAction func RegisterButton(_ sender: Any) {
         let user = User(email: EmailText.text!, pass: PasswordText.text!)
         Model.instance.CreateUser(user: user){ (email) in
-            if (email == "Wrong"){
-                Utilities().showAlert(title: "Error", message:"try Again", vc:self)
-            }
-            else{
+     
+            // check for empty fields:
+            if (user.email.isEmpty || user.password.isEmpty)
+                    {
+                       
+                     self.displayMyAlertMessage(userMessage: "All fields are required")
+                        return
+                    }
+           else{
                 Post.userEmail = email
                 self.performSegue(withIdentifier: "signUpToHomeSegue", sender: self)
             }
         }
-        
+       
+    }
+    
+    ///////////////
+//            if (email == "Wrong"){
+//                Utilities().showAlert(title: "Error", message:"try Again", vc:self)
+//            }
+ 
+    func displayMyAlertMessage(userMessage :String)
+    {
+        var myAlert = UIAlertController(title: "Alert", message: userMessage, preferredStyle: UIAlertController.Style.alert)
+        let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)
+        myAlert.addAction(okAction)
+        //self.presentingViewController(myAlert)
+        self.present(myAlert, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -46,15 +61,5 @@ class SignUpViewController: UIViewController,UITextViewDelegate,UITextFieldDeleg
         view.endEditing(true)
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

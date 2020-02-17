@@ -11,7 +11,7 @@ class ModelEvents{
     static let PostDataEvent = EventNotificationBase(eventName: "PostDataEvent")
     //        static let LoggingStateChangeEvent = EventNotificationBase(eventName: "LoggingStateChangeEvent")
     static let gpsUpdateEvent = StringEventNotificationBase<String> (eventName: "gpsUpdateEvent")
-    static let loginEvent = StringEventNotificationBase<String>(eventName: "loginEvent")
+    static let loginEvent = StringEventNotificationBase<String>(eventName: "LoginEvent")
     
     private init(){}
 }

@@ -62,6 +62,9 @@ class Model
         modelFirebase.getMyPosts(callback: callback)
     }
     
+    
+    
+    
     func deleteMyPost(postID:String){
         modelFirebase.deleteMyPost(postID: postID)
         modelSql.delete(postId: postID)
@@ -92,7 +95,6 @@ class Model
         
     }
     
-   
 }
    
   

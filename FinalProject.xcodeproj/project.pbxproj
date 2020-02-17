@@ -23,14 +23,12 @@
 		841A21FE23C7418E0027FA61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841A21FC23C7418E0027FA61 /* LaunchScreen.storyboard */; };
 		841A220923C7418E0027FA61 /* FinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A220823C7418E0027FA61 /* FinalProjectTests.swift */; };
 		841A221423C7418E0027FA61 /* FinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A221323C7418E0027FA61 /* FinalProjectUITests.swift */; };
-		841A222623C74ACA0027FA61 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841A222523C74ACA0027FA61 /* SecondViewController.swift */; };
 		8439749E23CE06140038B703 /* PostsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439749D23CE06140038B703 /* PostsTableViewController.swift */; };
 		843974A023CE09BC0038B703 /* PostsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439749F23CE09BC0038B703 /* PostsViewCell.swift */; };
 		843974A523CE0D7D0038B703 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843974A423CE0D7D0038B703 /* Model.swift */; };
 		843974A723CE0E9B0038B703 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843974A623CE0E9B0038B703 /* Post.swift */; };
 		846462DD23C7886F00936D6B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846462DC23C7886F00936D6B /* SignUpViewController.swift */; };
 		846462DF23C78EDB00936D6B /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846462DE23C78EDB00936D6B /* NewPostViewController.swift */; };
-		846462E123C7962700936D6B /* PostsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846462E023C7962700936D6B /* PostsPageViewController.swift */; };
 		848FF38323F701E300F660F8 /* EventNotificationBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FF38223F701E300F660F8 /* EventNotificationBase.swift */; };
 		848FF38523F701FD00F660F8 /* StringEventNotificationBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FF38423F701FD00F660F8 /* StringEventNotificationBase.swift */; };
 		848FF38723F7033200F660F8 /* ModelEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 848FF38623F7033200F660F8 /* ModelEvents.swift */; };
@@ -87,14 +85,12 @@
 		841A220F23C7418E0027FA61 /* FinalProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinalProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		841A221323C7418E0027FA61 /* FinalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalProjectUITests.swift; sourceTree = "<group>"; };
 		841A221523C7418E0027FA61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		841A222523C74ACA0027FA61 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		8439749D23CE06140038B703 /* PostsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableViewController.swift; sourceTree = "<group>"; };
 		8439749F23CE09BC0038B703 /* PostsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewCell.swift; sourceTree = "<group>"; };
 		843974A423CE0D7D0038B703 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		843974A623CE0E9B0038B703 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		846462DC23C7886F00936D6B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		846462DE23C78EDB00936D6B /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
-		846462E023C7962700936D6B /* PostsPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsPageViewController.swift; sourceTree = "<group>"; };
 		848FF38223F701E300F660F8 /* EventNotificationBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventNotificationBase.swift; sourceTree = "<group>"; };
 		848FF38423F701FD00F660F8 /* StringEventNotificationBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringEventNotificationBase.swift; sourceTree = "<group>"; };
 		848FF38623F7033200F660F8 /* ModelEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelEvents.swift; sourceTree = "<group>"; };
@@ -216,10 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				841A21F523C7418B0027FA61 /* ViewController.swift */,
-				841A222523C74ACA0027FA61 /* SecondViewController.swift */,
 				846462DC23C7886F00936D6B /* SignUpViewController.swift */,
 				846462DE23C78EDB00936D6B /* NewPostViewController.swift */,
-				846462E023C7962700936D6B /* PostsPageViewController.swift */,
 				8439749D23CE06140038B703 /* PostsTableViewController.swift */,
 				8439749F23CE09BC0038B703 /* PostsViewCell.swift */,
 				84BE6B8223F983D200D3C95A /* PostInfoViewController.swift */,
@@ -515,10 +509,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				84103A7A23F6E49A0050DA34 /* ViewController.swift in Sources */,
-				846462E123C7962700936D6B /* PostsPageViewController.swift in Sources */,
 				843974A723CE0E9B0038B703 /* Post.swift in Sources */,
 				8439749E23CE06140038B703 /* PostsTableViewController.swift in Sources */,
-				841A222623C74ACA0027FA61 /* SecondViewController.swift in Sources */,
 				840570DD23D9B12E0063664A /* FirebaseStorage.swift in Sources */,
 				841A21F223C7418B0027FA61 /* AppDelegate.swift in Sources */,
 				841A21F423C7418B0027FA61 /* SceneDelegate.swift in Sources */,
