@@ -118,6 +118,7 @@ func getMyPosts(callback:@escaping ([Post]?)->Void){
             if error != nil{
                 print(error!)
                 callback("wrong")
+                
             }
             else{
                 print("Registration Successful!!")

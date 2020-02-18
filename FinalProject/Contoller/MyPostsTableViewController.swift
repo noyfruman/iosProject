@@ -52,7 +52,7 @@ class MyPostsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: MyPostsViewCell = tableView.dequeueReusableCell(withIdentifier: "MyPostsCell", for: indexPath) as! MyPostsViewCell
 
-        cell.delegate = self as! SwipeTableViewCellDelegate
+        cell.delegate = self
         let post = data[indexPath.row]
         cell.productNameLabel.text = post.productName
         cell.catagoryLabel.text = post.catagory
@@ -109,9 +109,9 @@ extension MyPostsTableViewController : SwipeTableViewCellDelegate
                    self.editPost(index: indexPath.row)
     }
         delete.image = UIImage(named: "deleteIcon")
-        delete.backgroundColor = UIColor.white;
+        delete.backgroundColor = UIColor.blue;
         edit.image = UIImage(named: "editIcon")
-        edit.backgroundColor = UIColor.white
+        edit.backgroundColor = UIColor.red
         
         return [delete,edit]
 }

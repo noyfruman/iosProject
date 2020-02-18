@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
 class SignUpViewController: UIViewController,UITextViewDelegate,UITextFieldDelegate {
     
     //    @IBAction func BackButton(_ sender: UIButton) {
@@ -53,13 +54,23 @@ class SignUpViewController: UIViewController,UITextViewDelegate,UITextFieldDeleg
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+//        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
+//        view.addGestureRecognizer(tap)
+//    }
+//    
+//    @objc func dismissKeyboard(){
+//        view.endEditing(true)
+//    }
+    
     }
-    
-    @objc func dismissKeyboard(){
-        view.endEditing(true)
-    }
-    
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+           self.view.endEditing(true)
+        self.EmailText.delegate = self
+        self.PasswordText.delegate = self
+           
+       }
+       func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+           textField.resignFirstResponder()
+           return true;
+       }
 }

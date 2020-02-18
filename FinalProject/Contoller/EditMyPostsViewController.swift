@@ -8,21 +8,15 @@
 
 import UIKit
 
-class EditMyPostsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EditMyPostsViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate,UITextFieldDelegate{
     
     @IBOutlet weak var productNameText: UITextField!
-    
-    
     @IBOutlet weak var choosePicB: UIButton!
     @IBOutlet weak var catagoryText: UITextField!
     @IBOutlet weak var avatarImg: UIImageView!
-    
     @IBOutlet weak var cityText: UITextField!
-    
     @IBOutlet weak var datesText: UITextField!
-    
     @IBOutlet weak var priceText: UITextField!
-    
     @IBOutlet weak var phoneText: UITextField!
     @IBOutlet weak var moreDetailsText: UITextField!
     @IBOutlet weak var saveChangesB: UIButton!
@@ -51,14 +45,25 @@ class EditMyPostsViewController: UIViewController, UIImagePickerControllerDelega
         }
         postId = post!.postId!
         activities.isHidden = true
+        productNameText.delegate = self
+        catagoryText.delegate = self
+        cityText.delegate = self
+        datesText.delegate = self
+        priceText.delegate = self
+        moreDetailsText.delegate = self
+        phoneText.delegate = self
         
-        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard(){
-        view.endEditing(true)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        
     }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
+    
     var selectedImg :UIImage?
     @IBAction func choosePicBtn(_ sender: UIButton) {
         if UIImagePickerController.isSourceTypeAvailable(
@@ -101,16 +106,5 @@ class EditMyPostsViewController: UIViewController, UIImagePickerControllerDelega
     
 }
 
-
-
-/*
- // MARK: - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
- // Get the new view controller using segue.destination.
- // Pass the selected object to the new view controller.
- }
- */
 
 

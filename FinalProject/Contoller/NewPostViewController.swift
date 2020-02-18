@@ -40,19 +40,10 @@ class NewPostViewController: UIViewController,UITextFieldDelegate, UIImagePicker
         PriceText.delegate = self
         DetailsText.delegate = self
         phoneText.delegate = self
-        
         Activities.isHidden = true;
         
-        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
-        
-        
+
     }
-    
-    @objc func dismissKeyboard(){
-        view.endEditing(true)
-    }
-    
     
     @IBAction func Pic(_ sender: UIButton) { //to take photos from gallery/camera.
         if UIImagePickerController.isSourceTypeAvailable(
@@ -103,5 +94,13 @@ class NewPostViewController: UIViewController,UITextFieldDelegate, UIImagePicker
     func configureTextView(){
         
     }
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+         self.view.endEditing(true)
+         
+     }
+     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+         textField.resignFirstResponder()
+         return true;
+     }
     
 }

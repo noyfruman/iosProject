@@ -22,20 +22,20 @@ class ViewController: UIViewController,UITextViewDelegate,UITextFieldDelegate{ /
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        //        navigationController?.hidesBarsWhenKeyboardAppears = true
-        let tap:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
+        self.emailText.delegate = self
+        self.PasswordText.delegate = self
     }
+
     
-    @objc func dismissKeyboard(){
-        view.endEditing(true)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+        
     }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true;
+    }
     @IBAction func signIn(_ sender: UIButton) {
-        //        PasswordText.resignFirstResponder();
-        //        emailText.resignFirstResponder();
         let user = User(email: emailText.text!, pass: PasswordText.text!)
         Model.instance.loginUser(user: user){ (email) in
             
@@ -56,7 +56,7 @@ class ViewController: UIViewController,UITextViewDelegate,UITextFieldDelegate{ /
     }
     
     //
-    //    if (email == "Wrong"){
+    //    if (email == "wrong"){
     //    Utilities().showAlert(title:"Error", message:"Try Again", vc:self)
     //    }
     
