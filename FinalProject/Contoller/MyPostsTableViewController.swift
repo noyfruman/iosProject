@@ -102,16 +102,18 @@ extension MyPostsTableViewController : SwipeTableViewCellDelegate
 {
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
         guard orientation == .right else{ return nil}
-        let delete = SwipeAction (style: .destructive, title: "Delete") { action, indexPath in
+        let delete = SwipeAction (style:.destructive, title: "Delete") { action, indexPath in
             self.deletePost(index: indexPath.row)
         }
         let edit = SwipeAction (style: .destructive, title: "Edit") { action, indexPath in
                    self.editPost(index: indexPath.row)
     }
         delete.image = UIImage(named: "deleteIcon")
-        delete.backgroundColor = UIColor.blue;
+        delete.backgroundColor = UIColor.white;
+        delete.textColor = UIColor.red
         edit.image = UIImage(named: "editIcon")
-        edit.backgroundColor = UIColor.red
+        edit.backgroundColor = UIColor.white
+        edit.textColor = UIColor.black
         
         return [delete,edit]
 }

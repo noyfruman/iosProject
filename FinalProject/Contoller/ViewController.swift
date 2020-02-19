@@ -42,11 +42,17 @@ class ViewController: UIViewController,UITextViewDelegate,UITextFieldDelegate{ /
             
             
             // check for empty fields:
-            if (user.email.isEmpty || user.password.isEmpty) || (email == "wrong")
+            if (user.email.isEmpty || user.password.isEmpty)
             {
                 self.displayMyAlertMessage(userMessage: "All fields are required")
                 return
             }
+             if (email == "wrong")
+             {
+                self.displayMyAlertMessage(userMessage: "Email or Password are inccorect.\n if you are not register please click on Sign-Up button")
+                return
+                }
+            
             else{
                 Post.userEmail = email
                 self.performSegue(withIdentifier: "homeSegue", sender: self)
